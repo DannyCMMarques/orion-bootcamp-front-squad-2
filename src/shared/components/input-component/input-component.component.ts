@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input-component',
@@ -13,45 +13,41 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class InputFieldComponent {
-  @Input() placeholder = '';
+export class InputFieldComponent implements ControlValueAccessor {
   @Input() label = 'Label';
   @Input() type: 'email' | 'password' | 'text' | 'number' = 'text';
   @Input() showError = false;
 
-  value = '';
-  isFocused = false;
+  public value: string | number = '';
+  public isFocused = false;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onChange = (value: any) => { };
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onTouched = () => { };
+  private onChange: (value: string | number) => void = () => {};
+  private onTouched: () => void = () => {};
 
-  writeValue(value: any): void {
+  public writeValue(value: string | number): void {
     this.value = value || '';
   }
 
-  registerOnChange(fn: any): void {
+  public registerOnChange(fn: (value: string | number) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  public registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setDisabledState?(isDisabled: boolean): void { }
 
-  onInput(event: any): void {
-    this.value = event.target.value;
+  public onInput(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.value = this.type === 'number' ? +target.value : target.value;
     this.onChange(this.value);
   }
 
-  onFocus(): void {
+  public onFocus(): void {
     this.isFocused = true;
   }
 
-  onBlur(): void {
+  public onBlur(): void {
     this.isFocused = false;
     this.onTouched();
   }
