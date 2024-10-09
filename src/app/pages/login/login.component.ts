@@ -11,6 +11,7 @@ import { setAuthToken } from 'src/utils/helpers/helpers';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  public userRole='Administrador'
   public isAutorizaded = false;
   public formulario = this.formBuilder.group({
   password: [null, [Validators.required]],
@@ -43,6 +44,7 @@ export class LoginComponent {
               setAuthToken(
                 response.body.access_token//  TODO:Mudar quando tiver a api
               );
+              localStorage.setItem('role', this.userRole);
               this.isAutorizaded = true;
               this.showError = false;
               this.router.navigate(['/']); //TODO:mudar quando tiver a rota da pagina principaç

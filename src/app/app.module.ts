@@ -10,11 +10,14 @@ import { Interceptor } from 'src/shared/interceptor/AuthInterceptor.interceptor'
 import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdmAlunosComponent } from './pages/adm-alunos/adm-alunos.component';
+import { AdmProfessoresComponent } from './pages/adm-professores/adm-professores.component';
+import { AdmTurmasComponent } from './pages/adm-turmas/adm-turmas.component';
 import { LoginModule } from './pages/login/login.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AdmProfessoresComponent, AdmAlunosComponent, AdmTurmasComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
