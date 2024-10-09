@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./content-tela.component.scss'],
 })
 export class ContentTelaComponent {
-  txtBtnProfessor: string = 'Sou Professor(a)';
-  txtBtnResponsavel: string = 'Sou Responsável';
+  txtBtnProfessor = 'Sou Professor(a)';
+  txtBtnResponsavel = 'Sou Responsável';
 
   constructor(private router: Router) {}
 

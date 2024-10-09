@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./button-tela-inicial.component.scss'],
 })
 export class ButtonTelaInicialComponent {
-  @Input() texto: string = 'btn';
-  @Input() rota: string = '/';
+  @Input() texto = 'btn';
+  @Input() rota = '/';
 
   constructor(private router: Router) {}
 
