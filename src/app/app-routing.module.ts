@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
-import { LoginProfessorComponent } from './pages/login-professor/login-professor.component';
-import { LoginResponsavelComponent } from './pages/login-responsavel/login-responsavel.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: 'tela-inicial', component: TelaInicialComponent },
-  { path: 'login-professor', component: LoginProfessorComponent },
-  { path: 'login-responsavel', component: LoginResponsavelComponent },
-  // { path: 'login-administrador', component: "LoginAdministradorComponent" },
+  { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: 'tela-inicial' },
 ];
 

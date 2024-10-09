@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content-tela',
@@ -9,10 +8,4 @@ import { Router } from '@angular/router';
 export class ContentTelaComponent {
   txtBtnProfessor = 'Sou Professor(a)';
   txtBtnResponsavel = 'Sou Responsável';
-
-  constructor(private router: Router) {}
-
-  navegarAdm() {
-    this.router.navigate(['/login-administrador']);
-  }
 }

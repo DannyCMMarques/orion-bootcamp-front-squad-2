@@ -6,8 +6,8 @@
         md:h-[147px] h-[80px] px-[32.5px] xl:px-[62.5px] xl:pl-[62.5px] xl:pr-[62.5px] md:leading-[44px] leading-[24px]">Para acessar a plataforma, selecione o seu tipo de perfil.</p>
     </div>
     <div class="flex flex-col gap-[13px] md:gap-[23px] mt-[25px] md:mt-[30px] lg:mt-[45px]">
-        <app-button-tela-inicial rota="/login-professor" [texto]="txtBtnProfessor"></app-button-tela-inicial>
-        <app-button-tela-inicial rota="/login-responsavel" [texto]="txtBtnResponsavel"></app-button-tela-inicial>
-        <button class="text-[var(--preto)] text-[12px] md:text-[14px] font-medium leading-[20px] underline" type="button" (click)="navegarAdm()">Sou Administrador</button>
+        <app-button-tela-inicial [routerLink]="['/login']" [queryParams]="{ user: 'professor' }" [texto]="txtBtnProfessor"></app-button-tela-inicial>
+        <app-button-tela-inicial [routerLink]="['/login']" [queryParams]="{ user: 'responsavel' }" [texto]="txtBtnResponsavel"></app-button-tela-inicial>
+        <button [routerLink]="['/login']" [queryParams]="{ user: 'administrador' }" class="text-[var(--preto)] text-[12px] md:text-[14px] font-medium leading-[20px] underline" type="button">Sou Administrador</button>
     </div>
 </div>

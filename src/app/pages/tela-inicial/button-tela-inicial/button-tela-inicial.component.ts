@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button-tela-inicial',
@@ -8,11 +7,4 @@ import { Router } from '@angular/router';
 })
 export class ButtonTelaInicialComponent {
   @Input() texto = 'btn';
-  @Input() rota = '/';
-
-  constructor(private router: Router) {}
-
-  navegar() {
-    this.router.navigate([this.rota]);
-  }
 }

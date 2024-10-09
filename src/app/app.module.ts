@@ -11,8 +11,7 @@ import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.componen
 import { ImagemTelaComponent } from './pages/tela-inicial/imagem-tela/imagem-tela.component';
 import { ContentTelaComponent } from './pages/tela-inicial/content-tela/content-tela.component';
 import { ButtonTelaInicialComponent } from './pages/tela-inicial/button-tela-inicial/button-tela-inicial.component';
-import { LoginProfessorComponent } from './pages/login-professor/login-professor.component';
-import { LoginResponsavelComponent } from './pages/login-responsavel/login-responsavel.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { LoginResponsavelComponent } from './pages/login-responsavel/login-respo
     ImagemTelaComponent,
     ContentTelaComponent,
     ButtonTelaInicialComponent,
-    LoginProfessorComponent,
-    LoginResponsavelComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
