@@ -45,3 +45,24 @@ button:disabled {
     font-size: 87.5%;
   }
 }
+
+.ripple-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.486);
+  transform: scale(0);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+  opacity: 0;
+}
+
+.ripple-effect:active::before {
+  transform: scale(4);
+  opacity: 1;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
