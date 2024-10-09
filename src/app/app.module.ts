@@ -7,10 +7,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
+import { ImagemTelaComponent } from './pages/tela-inicial/imagem-tela/imagem-tela.component';
+import { ContentTelaComponent } from './pages/tela-inicial/content-tela/content-tela.component';
+import { ButtonTelaInicialComponent } from './pages/tela-inicial/button-tela-inicial/button-tela-inicial.component';
+import { LoginProfessorComponent } from './pages/login-professor/login-professor.component';
+import { LoginResponsavelComponent } from './pages/login-responsavel/login-responsavel.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TelaInicialComponent,
+    ImagemTelaComponent,
+    ContentTelaComponent,
+    ButtonTelaInicialComponent,
+    LoginProfessorComponent,
+    LoginResponsavelComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,9 +30,9 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
