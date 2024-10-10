@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from 'angular-toastify';
 import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
-import { setAuthToken } from 'src/utils/helpers/helpers';
+import { getAuthToken } from 'src/utils/helpers/helpers';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +11,19 @@ import { setAuthToken } from 'src/utils/helpers/helpers';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  public isAutorizaded = false;
+  private access_token = '';
+
   public formulario = this.formBuilder.group({
-  password: [null, [Validators.required]],
+    password: [null, [Validators.required]],
     email: [null, [Validators.required]],
   });
+
   public showError = false;
-  errorvalidacao =
+
+  public errorvalidacao =
     this.formulario.get('password')?.invalid &&
     this.formulario.get('password')?.touched;
+
   constructor(
     private formBuilder: FormBuilder,
     private _toastService: ToastService,
@@ -31,7 +35,7 @@ export class LoginComponent {
     this._toastService.error('Ocorreu um erro');
   }
 
- public submit() {
+  public submit() {
     this.formulario.markAllAsTouched();
 
     if (this.formulario.valid) {
@@ -39,22 +43,16 @@ export class LoginComponent {
         .loginAdministradores(this.formulario.value)
         .subscribe({
           next: (response) => {
-            if (response && response.body.access_token) { //  TODO:Mudar quando tiver a api
-              setAuthToken(
-                response.body.access_token//  TODO:Mudar quando tiver a api
-              );
-              this.isAutorizaded = true;
+            if (response && getAuthToken()) {
               this.showError = false;
               this.router.navigate(['/']); //TODO:mudar quando tiver a rota da pagina principaç
             }
           },
           error: (error) => {
-            if (error.status === 401) { //  TODO:Mudar quando tiver a api
-              this.isAutorizaded = false;
+            if (error.status === 401) {
+              //  TODO:Mudar quando tiver a api
               this.showError = true;
-              console.error('Unauthorized access - 401');
             } else {
-              console.error('Unexpected error:', error);
               this.addInfoToast();
             }
           },
@@ -64,7 +62,7 @@ export class LoginComponent {
     }
   }
 
- private reset() {
+  private reset() {
     this.formulario.reset();
   }
 }
