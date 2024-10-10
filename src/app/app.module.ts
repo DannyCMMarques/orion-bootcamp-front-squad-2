@@ -1,12 +1,17 @@
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AngularToastifyModule, ToastService } from 'angular-toastify';
+import { Interceptor } from 'src/shared/interceptor/AuthInterceptor.interceptor';
+import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginModule } from './pages/login/login.module';
+import { PagesRoutingModule } from './pages/pages-routing.module';
 import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
 import { ImagemTelaComponent } from './pages/tela-inicial/imagem-tela/imagem-tela.component';
 import { ContentTelaComponent } from './pages/tela-inicial/content-tela/content-tela.component';
@@ -14,14 +19,7 @@ import { ButtonTelaInicialComponent } from './pages/tela-inicial/button-tela-ini
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TelaInicialComponent,
-    ImagemTelaComponent,
-    ContentTelaComponent,
-    ButtonTelaInicialComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,8 +27,20 @@ import { LoginComponent } from './pages/login/login.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
+    LoginModule,
+    FontAwesomeModule,
+    AngularToastifyModule,
+    PagesRoutingModule,
   ],
-  providers: [],
+  providers: [
+    ToastService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true,
+    },
+    LoginCadastroService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

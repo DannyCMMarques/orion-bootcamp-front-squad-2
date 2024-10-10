@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        cinzaPadraoInput: "#49454F",
+        roxo_400: "#65558F"
+      },
+    },
   },
   plugins: [],
 };
