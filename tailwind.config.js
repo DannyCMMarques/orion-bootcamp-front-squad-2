@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'roboto': ['Roboto']
+      },
+      color: {
+        'roxo-claro': '#6750A478',
+      }
+    },
   },
   plugins: [],
 };
