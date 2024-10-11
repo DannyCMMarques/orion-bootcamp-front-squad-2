@@ -14,16 +14,17 @@ import { LoginModule } from './pages/login/login.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import { TelaPrincipalComponent } from './pages/tela-principal/tela-principal.component';
 import { CardCadastroComponent } from 'src/shared/components/card-cadastro/card-cadastro.component';
-import { ButtonComponentModule } from '../shared/components/button/button.module'
 import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
 import { ImagemTelaComponent } from './pages/tela-inicial/imagem-tela/imagem-tela.component';
 import { ContentTelaComponent } from './pages/tela-inicial/content-tela/content-tela.component';
 import { ButtonTelaInicialComponent } from './pages/tela-inicial/button-tela-inicial/button-tela-inicial.component';
-import { LoginComponent } from './pages/login/login.component';
+import { SharedComponentModule } from '../shared/components/shared-component.module'; // ou ajuste o caminho conforme necessário
+
 
 
 @NgModule({
-  declarations: [AppComponent, TelaPrincipalComponent, CardCadastroComponent],
+  
+    declarations: [AppComponent, TelaPrincipalComponent, CardCadastroComponent, TelaInicialComponent, ImagemTelaComponent, ContentTelaComponent, ButtonTelaInicialComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +36,7 @@ import { LoginComponent } from './pages/login/login.component';
     FontAwesomeModule,
     AngularToastifyModule,
     PagesRoutingModule,
-    ButtonComponentModule
+    SharedComponentModule
   ],
   providers: [
     ToastService,
