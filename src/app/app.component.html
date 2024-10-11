@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="flex gap-10">
+  <ng-container *ngIf="!isLoginRoute()">
+    <app-menu-lateral></app-menu-lateral>
+  </ng-container>
+  <div class="w-full">
+    <div class="w-1/2 mt-12">
+      <app-select></app-select>
+
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -2,8 +2,10 @@
   (click)="emitFunction()"
   class="ripple-effect rounded-full w-full h-[40px] hover:opacity-85 duration-150 relative overflow-hidden"
   [ngClass]="{
-    'bg-[#65558F] text-white': buttonStyle === 'full',
-    'border-[#65558F] text-[#65558F] border-2 ': buttonStyle === 'outline'
+    'bg-[#65558F] text-white': buttonStyle === 'full' && !simpleButtonGray,
+    'bg-[#6750A43D] text-white':buttonStyle === 'full-roxo-claro',
+    'border-[#65558F] text-[#65558F] border-2 ': buttonStyle === 'outline' && !simpleButtonGray,
+    'text-sm text-gray-600 mb-4 hover:text-gray-600 duration-150 ': simpleButtonGray
   }"
 >
   {{ title }}
