@@ -10,10 +10,8 @@ export class ButtonComponent {
   @Input() buttonStyle: 'outline' | 'full' |'full-roxo-claro' = 'full'
   @Output() clickButton = new EventEmitter
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() { }
 
-  emitirFuncao() {
+  public emitFunction() {
     this.clickButton.emit()
   }
 }
