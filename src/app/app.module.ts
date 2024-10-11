@@ -10,8 +10,8 @@ import { Interceptor } from 'src/shared/interceptor/AuthInterceptor.interceptor'
 import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginModule } from './pages/login/login.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,10 +22,10 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    LoginModule,
     FontAwesomeModule,
     AngularToastifyModule,
     PagesRoutingModule,
+    PagesModule
   ],
   providers: [
     ToastService,
