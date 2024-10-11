@@ -1,11 +1,13 @@
+import { TOKEN_ENUM } from "../enum/token.enum";
+
 export function setAuthToken(token: string): void {
-  localStorage.setItem('access_token', token);
+  localStorage.setItem(TOKEN_ENUM.ACCESS_TOKEN, token);
 }
 
 export function getAuthToken(): string | null {
-  return localStorage.getItem('access_token');
+  return localStorage.getItem(TOKEN_ENUM.ACCESS_TOKEN);
 }
 
 export function removeAuthToken(): void {
-  localStorage.removeItem('access_token');
+  localStorage.removeItem(TOKEN_ENUM.ACCESS_TOKEN);
 }
