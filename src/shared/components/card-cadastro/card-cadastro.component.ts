@@ -7,5 +7,5 @@ import { mockCadastro } from 'src/utils/mocks/mocksCadrastro';
   styleUrls: ['./card-cadastro.component.scss']
 })
 export class CardCadastroComponent {
-  data=mockCadastro;
+  public data=mockCadastro;
 }

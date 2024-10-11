@@ -6,8 +6,10 @@ module.exports = {
       fontFamily: {
         'roboto': ['Roboto']
       },
-      color: {
-        'roxo-claro': '#6750A478',
+      colors: {
+        'roxo-claro': '#dcd4ec',
+        'roxo-medio': '#6750A478',
+        'roxo-escuro': '#65558F'
       }
     },
   },
