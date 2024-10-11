@@ -11,8 +11,6 @@ import { getAuthToken } from 'src/utils/helpers/helpers';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  private access_token = '';
-
   public formulario = this.formBuilder.group({
     password: [null, [Validators.required]],
     email: [null, [Validators.required]],

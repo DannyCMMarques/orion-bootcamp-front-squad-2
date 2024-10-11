@@ -10,13 +10,8 @@ import { Interceptor } from 'src/shared/interceptor/AuthInterceptor.interceptor'
 import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginModule } from './pages/login/login.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
-import { TelaInicialComponent } from './pages/tela-inicial/tela-inicial.component';
-import { ImagemTelaComponent } from './pages/tela-inicial/imagem-tela/imagem-tela.component';
-import { ContentTelaComponent } from './pages/tela-inicial/content-tela/content-tela.component';
-import { ButtonTelaInicialComponent } from './pages/tela-inicial/button-tela-inicial/button-tela-inicial.component';
-import { LoginComponent } from './pages/login/login.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,10 +22,10 @@ import { LoginComponent } from './pages/login/login.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    LoginModule,
     FontAwesomeModule,
     AngularToastifyModule,
     PagesRoutingModule,
+    PagesModule
   ],
   providers: [
     ToastService,
