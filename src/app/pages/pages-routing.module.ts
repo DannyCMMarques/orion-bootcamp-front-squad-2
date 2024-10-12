@@ -4,18 +4,26 @@ import { authGuard } from 'src/shared/services/auth-guard.guard';
 import { LoginComponent } from './login/login.component';
 import { PageExibirCadastrosComponent } from './page-exibir-cadastros/page-exibir-cadastros.component';
 import { PagesCadatrarComponent } from './pages-cadatrar/pages-cadatrar.component';
+import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 
-const routes: Routes = [{ path: 'login', component: LoginComponent },
-{
-  path: 'cadastrados/:type', component: PageExibirCadastrosComponent, canActivate: [authGuard],
-},
-{
-  path: 'cadastrar/:type', component: PagesCadatrarComponent,canActivate:[authGuard]
-}
+const routes: Routes = [
+  { path: '', redirectTo: '/tela-inicial', pathMatch: 'full' },
+  { path: 'tela-inicial', component: TelaInicialComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'cadastrados/:type',
+    component: PageExibirCadastrosComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'cadastrar/:type',
+    component: PagesCadatrarComponent,
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

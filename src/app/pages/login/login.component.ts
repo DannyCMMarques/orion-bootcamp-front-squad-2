@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from 'angular-toastify';
@@ -10,7 +11,9 @@ import { getAuthToken } from 'src/utils/helpers/helpers';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  userRole: string | null = '';
+
   public formulario = this.formBuilder.group({
     password: [null, [Validators.required]],
     email: [null, [Validators.required]],
@@ -23,11 +26,18 @@ export class LoginComponent {
     this.formulario.get('password')?.touched;
 
   constructor(
+    private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private _toastService: ToastService,
     private loginCadastroService: LoginCadastroService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.userRole = params['user'] || 'Guest';
+    });
+  }
 
   private addInfoToast() {
     this._toastService.error('Ocorreu um erro');
