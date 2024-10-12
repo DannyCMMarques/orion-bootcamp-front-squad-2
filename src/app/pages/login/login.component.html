@@ -1,14 +1,8 @@
 <div class="flex justify-center items-center w-full bg-[#65558F] h-screen">
-  <lib-toastify-toast-container
-    [pauseOnHover]="false"
-  ></lib-toastify-toast-container>
-  <div
-    class="bg-white w-[90%] md:w-full h-auto md:max-w-[510px] p-4 w-11 sm:p-0"
-  >
+  <lib-toastify-toast-container [pauseOnHover]="false"></lib-toastify-toast-container>
+  <div class="bg-white w-[90%] md:w-full h-auto md:max-w-[510px] p-4 w-11 sm:p-0">
     <div class="w-full h-auto mt-6">
-      <p
-        class="text-[25px] sm:text-[25px] md:text-[45px] font-bold text-center"
-      >
+      <p class="text-[25px] sm:text-[25px] md:text-[45px] font-bold text-center">
         Olá, Administrador!
       </p>
     </div>
@@ -20,55 +14,34 @@
       <div class="mt-[20px] sm:mt-[35px]">
         <form [formGroup]="formulario">
           <div class="mt-[20px] sm:mt-[36px]">
-            <app-input-component
-              type="email"
-              formControlName="email"
-              label="Insira o e-mail:"
-              placeholder=""
-              [showError]="
+            <app-input-component type="email" formControlName="email" label="Insira o e-mail:" placeholder="" [showError]="
                 (formulario.get('email')?.invalid &&
                   formulario.get('email')?.touched) ||
                 showError
-              "
-            ></app-input-component>
-            <p
-              *ngIf="
+              "></app-input-component>
+            <p *ngIf="
                 formulario.get('email')?.errors?.['required'] &&
                 formulario.get('email')?.touched
-              "
-              class="text-red-500"
-            >
+              " class="text-red-500">
               O e-mail é obrigatório.
             </p>
-            <p
-              *ngIf="
+            <p *ngIf="
                 formulario.get('email')?.errors?.['email'] &&
                 formulario.get('email')?.touched
-              "
-              class="text-red-500"
-            >
+              " class="text-red-500">
               Por favor, insira um e-mail válido.
             </p>
           </div>
           <div class="mt-[20px] sm:mt-[36px]">
-            <app-input-component
-              type="password"
-              formControlName="password"
-              label="Insira sua senha"
-              placeholder=""
-              [showError]="
+            <app-input-component type="password" formControlName="password" label="Insira sua senha" placeholder="" [showError]="
                 (formulario.get('password')?.invalid &&
                   formulario.get('password')?.touched) ||
                 showError
-              "
-            ></app-input-component>
-            <p
-              *ngIf="
+              "></app-input-component>
+            <p *ngIf="
                 formulario.get('password')?.errors?.['required'] &&
                 formulario.get('password')?.touched
-              "
-              class="text-red-500"
-            >
+              " class="text-red-500">
               A senha é obrigatória.
             </p>
             <p *ngIf="showError" class="text-red-500">

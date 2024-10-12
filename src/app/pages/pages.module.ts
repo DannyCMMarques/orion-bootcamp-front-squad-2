@@ -6,15 +6,21 @@ import { SharedComponentModule } from 'src/shared/components/shared-component.mo
 import { LoginComponent } from './login/login.component';
 import { PageExibirCadastrosComponent } from './page-exibir-cadastros/page-exibir-cadastros.component';
 import { PagesCadatrarComponent } from './pages-cadatrar/pages-cadatrar.component';
+import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 
 @NgModule({
-  declarations: [LoginComponent, PageExibirCadastrosComponent, PagesCadatrarComponent ],
+  declarations: [
+    LoginComponent,
+    PageExibirCadastrosComponent,
+    PagesCadatrarComponent,
+    TelaInicialComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AngularToastifyModule,
-    SharedComponentModule
+    SharedComponentModule,
   ],
   providers: [ToastService],
 })

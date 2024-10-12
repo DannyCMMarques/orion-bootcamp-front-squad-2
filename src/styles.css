@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +21,8 @@
 }
 
 body {
+  background: var(--branco);
+  color: var(--preto);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -34,23 +34,13 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.ripple-effect::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.486);
-  transform: scale(0);
-  transition:
-    transform 0.4s ease,
-    opacity 0.4s ease;
-  opacity: 0;
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
 }
-
-.ripple-effect:active::before {
-  transform: scale(4);
-  opacity: 1;
-  transition:
-    transform 0.4s ease,
-    opacity 0.4s ease;
-}
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}/*# sourceMappingURL=styles.css.map */

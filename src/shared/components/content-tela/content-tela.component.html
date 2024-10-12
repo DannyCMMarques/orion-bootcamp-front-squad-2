@@ -1,0 +1,13 @@
+<div class=" flex flex-col justify-center h-full m-auto max-w-[250px] sm:max-w-[310px] md:max-w-[320px] lg:max-w-[400px] xl:max-w-[526px]">
+    <div>
+        <p class="text-center text-[var(--preto)] font-bold text-[25px] sm:text-[35px] lg:text-[40px] xl:text-[45px]
+        md:pb-[12px] pb-[9px] mt-[146px]">Seja bem-vindo!</p>
+        <p class="text-center text-[var(--preto)] text-[20px] md:text-[25px] lg:text-[28px] xl:text-[36px]
+        md:h-[147px] h-[80px] px-[32.5px] xl:px-[62.5px] xl:pl-[62.5px] xl:pr-[62.5px] md:leading-[44px] leading-[24px]">Para acessar a plataforma, selecione o seu tipo de perfil.</p>
+    </div>
+    <div class="flex flex-col gap-[13px] md:gap-[23px] mt-[25px] md:mt-[30px] lg:mt-[45px]">
+        <app-button-tela-inicial [routerLink]="['']" [queryParams]="{ user: 'professor' }" [texto]="txtBtnProfessor"></app-button-tela-inicial>
+        <app-button-tela-inicial [routerLink]="['']" [queryParams]="{ user: 'responsavel' }" [texto]="txtBtnResponsavel"></app-button-tela-inicial>
+        <button [routerLink]="['/login']" [queryParams]="{ user: 'administrador' }" class="text-[var(--preto)] text-[12px] md:text-[14px] font-medium leading-[20px] underline" type="button">Sou Administrador</button>
+    </div>
+</div>

@@ -1,34 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Interceptor } from '../interceptor/AuthInterceptor.interceptor';
-
+import { Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { setAuthToken } from 'src/utils/helpers/helpers';
 @Injectable({
   providedIn: 'root',
 })
 export class LoginCadastroService {
-  api = Interceptor;
-  constructor(private http: HttpClient) {}
+  public api_path = '';
+  private token = '';
 
-  loginAdministradores(payload: any): Observable<any> { //  TODO:Mudar quando tiver a api
-    return this.http.post(
-      `auth/login`,
-      payload,
-      {
-        headers: {
-          'Content-Type': 'application/json',//  TODO:Mudar quando tiver a api
-        },
+  constructor(private http: HttpClient) {
+    this.api_path = environment.urlBase;
+  }
+
+  public loginAdministradores(payload: any): Observable<any> {
+    //  TODO:Mudar quando tiver a api
+    return this.http
+      .post(`${this.api_path}auth/login`, payload, {
         observe: 'response',
-      } //  TODO:Mudar quando tiver a api
-    );
+      })
+      .pipe(
+        tap((response: any) => {
+          this.token = response.body.access_token;
+          setAuthToken(this.token);
+        })
+      );
   }
 
-  loginPais(matricula: string): Observable<any> { //  TODO:Mudar quando tiver a api
-    return this.http.post(`auth/parents/login`, { matricula });
+  public loginPais(payload: string): Observable<any> {
+    //  TODO:Mudar quando tiver a api
+    return this.http.post(`${this.api_path}auth/parents/login`, payload);
   }
 
-  loginProfessores(matricula: string): Observable<any> { //  TODO:Mudar quando tiver a api
-    return this.http.post(`auth/teachers/login`, { matricula });
+  public loginProfessores(payload: string): Observable<any> {
+    //  TODO:Mudar quando tiver a api
+    return this.http.post(`${this.api_path}auth/teachers/login`, payload);
   }
-
 }
