@@ -7,11 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'boilerplate-frontend-orion-bootcamp';
 
   constructor(private router: Router) {}
 
-  isLoginRoute(): boolean {
-    return this.router.url === '/login';
-  }
 }
