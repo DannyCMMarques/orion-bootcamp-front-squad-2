@@ -1,0 +1,28 @@
+<div class="flex justify-center items-center mt-5">
+  <form  [formGroup]="formulario" class="w-[40%] gap-y-4 flex flex-col">
+    <app-input-component
+      placeholder="Nome do aluno"
+      label="Nome completo"
+      formControlName="nomeAluno"
+      ></app-input-component>
+    <app-input-component
+      placeholder="123456789"
+      type="number"
+      label="Número da Matrícula"
+      formControlName="matricula"></app-input-component>
+    <app-select label="Turma" [data]="dataTurma" formControlName="turma"> </app-select>
+    <app-input-component
+      placeholder="123.456.789-00"
+      type="number"
+      label="CPF do responsável"
+      formControlName="CPF"></app-input-component>
+    <app-input-component
+      placeholder="responsavel@mail.com"
+      type="email"
+      label="E-mail do responsável"
+      formControlName="email"></app-input-component>
+    <div class="w-1/2 m-auto">
+  <app-button buttonStyle="full" title="Cadastrar" (click)="submit" ></app-button>
+    </div>
+  </form>
+</div>

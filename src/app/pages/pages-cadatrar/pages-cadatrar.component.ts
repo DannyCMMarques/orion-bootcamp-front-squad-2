@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./pages-cadatrar.component.scss']
 })
 export class PagesCadatrarComponent {
-
+  tituloTurma =""
 }
