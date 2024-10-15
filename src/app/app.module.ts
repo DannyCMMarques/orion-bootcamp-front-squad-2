@@ -25,7 +25,7 @@ import { PagesModule } from './pages/pages.module';
     FontAwesomeModule,
     AngularToastifyModule,
     PagesRoutingModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [
     ToastService,

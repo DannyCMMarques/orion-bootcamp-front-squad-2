@@ -8,6 +8,7 @@ import { OpcoesMenuLateralComponent } from './opcoes-menu-lateral/opcoes-menu-la
 import { ImagemTelaComponent } from './imagem-tela/imagem-tela.component';
 import { ContentTelaComponent } from './content-tela/content-tela.component';
 import { ButtonTelaInicialComponent } from './button-tela-inicial/button-tela-inicial.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ButtonTelaInicialComponent } from './button-tela-inicial/button-tela-in
     ImagemTelaComponent,
     ContentTelaComponent,
     ButtonTelaInicialComponent,
+    DialogComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -27,6 +29,7 @@ import { ButtonTelaInicialComponent } from './button-tela-inicial/button-tela-in
     ImagemTelaComponent,
     ContentTelaComponent,
     ButtonTelaInicialComponent,
+    DialogComponent,
   ],
 })
 export class SharedComponentModule {}
