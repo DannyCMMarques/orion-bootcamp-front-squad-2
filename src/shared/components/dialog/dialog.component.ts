@@ -7,10 +7,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class DialogComponent {
   @Input() isOpen = false;
-  @Input() title = 'Turma já existe';
-  @Input() message =
-    'Verifique as informações digitadas ou cadastre novos dados';
-  @Input() button_text = 'Entendi';
+  @Input() title = '';
+  @Input() message = '';
+  @Input() label_button = '';
   @Output() onclose = new EventEmitter<void>();
 
   closeDialog() {
