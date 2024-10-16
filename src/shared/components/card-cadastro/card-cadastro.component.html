@@ -1,0 +1,8 @@
+<div class="flex justify-between w-[1050px] ml-[209px]">
+    <div *ngFor="let item of data" class="bg-roxo-medio w-[270px] h-[250px] rounded-[12px] py-3 px-[18px]">
+        <div class="flex justify-center items-center]">
+            <img class="w-[220px]" src={{item.imagem}} alt="imagem doo card {{item.titulo}}"/>
+        </div>
+        <button class="bg-white rounded-xl ml-[5px] mt-[12px] py-[5px] w-[220px] ">{{item.titulo}}</button>
+    </div>
+</div>

@@ -11,10 +11,14 @@ import { LoginCadastroService } from 'src/shared/services/login-cadastro.service
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesRoutingModule } from './pages/pages-routing.module';
+import { TelaPrincipalComponent } from './pages/tela-principal/tela-principal.component';
+import { CardCadastroComponent } from 'src/shared/components/card-cadastro/card-cadastro.component';
+import { SharedComponentModule } from '../shared/components/shared-component.module'; // ou ajuste o caminho conforme necessário
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  
+    declarations: [AppComponent, TelaPrincipalComponent, CardCadastroComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +29,7 @@ import { PagesModule } from './pages/pages.module';
     FontAwesomeModule,
     AngularToastifyModule,
     PagesRoutingModule,
+    SharedComponentModule,
     PagesModule
   ],
   providers: [
