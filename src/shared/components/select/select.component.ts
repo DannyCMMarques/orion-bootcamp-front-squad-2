@@ -14,7 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class SelectComponent implements ControlValueAccessor {
-  @Input() label = 'label';
+  @Input() label = '';
   @Input() showError = false;
   @Input() data: Array<{ value: string; label: string }> = [];
 
