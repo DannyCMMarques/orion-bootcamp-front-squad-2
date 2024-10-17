@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { PageExibirCadastrosComponent } from './page-exibir-cadastros/page-exibir-cadastros.component';
 import { PagesCadatrarComponent } from './pages-cadatrar/pages-cadatrar.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
+import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/tela-inicial', pathMatch: 'full' },
@@ -19,6 +20,10 @@ const routes: Routes = [
     path: 'cadastrar/:type',
     component: PagesCadatrarComponent,
     canActivate: [authGuard],
+  },
+  {
+    path: 'tela-principal',
+    component: TelaPrincipalComponent,
   },
 ];
 
