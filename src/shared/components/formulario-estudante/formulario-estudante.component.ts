@@ -9,7 +9,6 @@ import { mockSeletor } from 'src/utils/mocks/mocksSeletor';
 })
 export class FormularioEstudanteComponent {
   public dataTurma = mockSeletor;
-  public showError = false;
 
   public formulario = this.formBuilder.group({
     email: [null, [Validators.required, Validators.email]],
@@ -23,7 +22,6 @@ export class FormularioEstudanteComponent {
 
   public submit(): void {
     if (this.formulario.valid) {
-      console.log(this.formulario.value);
       this.reset();
     } else {
       this.formulario.markAllAsTouched();

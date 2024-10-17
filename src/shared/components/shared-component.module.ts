@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ButtonTelaInicialComponent } from './button-tela-inicial/button-tela-inicial.component';
 import { ButtonComponent } from './button/button.component';
 import { ContentTelaComponent } from './content-tela/content-tela.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { FormularioEstudanteComponent } from './formulario-estudante/formulario-estudante.component';
 import { ImagemTelaComponent } from './imagem-tela/imagem-tela.component';
 import { InputFieldComponent } from './input-component/input-component.component';
@@ -22,7 +23,8 @@ import { SelectComponent } from './select/select.component';
     ContentTelaComponent,
     ButtonTelaInicialComponent,
     SelectComponent,
-    FormularioEstudanteComponent
+    FormularioEstudanteComponent,
+    DialogComponent,
   ],
   imports: [CommonModule, RouterModule,ReactiveFormsModule],
   exports: [
@@ -33,8 +35,8 @@ import { SelectComponent } from './select/select.component';
     ContentTelaComponent,
     ButtonTelaInicialComponent,
     SelectComponent,
-    FormularioEstudanteComponent
-
+    FormularioEstudanteComponent,
+    DialogComponent,
   ],
 })
 export class SharedComponentModule {}

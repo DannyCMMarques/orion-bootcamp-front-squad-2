@@ -6,16 +6,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularToastifyModule, ToastService } from 'angular-toastify';
-import { SharedComponentModule } from 'src/shared/components/shared-component.module';
+import { CardCadastroComponent } from 'src/shared/components/card-cadastro/card-cadastro.component';
 import { Interceptor } from 'src/shared/interceptor/AuthInterceptor.interceptor';
 import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
+import { SharedComponentModule } from '../shared/components/shared-component.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import { PagesModule } from './pages/pages.module';
+import { TelaPrincipalComponent } from './pages/tela-principal/tela-principal.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TelaPrincipalComponent, CardCadastroComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
