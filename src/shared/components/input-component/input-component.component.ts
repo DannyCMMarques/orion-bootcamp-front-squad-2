@@ -17,7 +17,7 @@ export class InputFieldComponent implements ControlValueAccessor {
   @Input() label = 'Label';
   @Input() type: 'email' | 'password' | 'text' | 'number' = 'text';
   @Input() showError = false;
-
+ @Input() placeholder = ''
   public value: string | number = '';
   public isFocused = false;
 
