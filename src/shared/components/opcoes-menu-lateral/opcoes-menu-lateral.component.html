@@ -2,13 +2,12 @@
   <button
     (click)="redirectPages(item.caminho)"
     class="flex flex-col items-center w-full mt-2 hover:bg-[#c0b5d8]"
-    *ngFor="let item of mocks"
-  >
-    <a [routerLink]="[item.caminho]" class="text-center">
-      <div class="flex flex-col items-center">
-        <img [src]="item.imagem" alt="professores" />
-        <span class="text-sm font-bold text-black">{{ item.titulo }}</span>
-      </div>
-    </a>
+    *ngFor="let item of mocks">
+    <div class="flex flex-col items-center sm:w-3/5 w-1/2 md:w-full">
+      <img [src]="item.imagem" alt="Cadastro" />
+      <span
+        class="text-[11px] md:text-[11px] sm:text-sm font-bold text-black">{{
+        item.titulo }}</span>
+    </div>
   </button>
 </div>

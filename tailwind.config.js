@@ -14,6 +14,7 @@ module.exports = {
         roxo_400: "#65558F",
         cinza_300: "#49454f",
         Surface_Container: "#f3edf7",
+        "roxo-600":"#6750A43D"
       },
     },
   },
