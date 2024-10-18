@@ -67,6 +67,7 @@ export class LoginComponent implements OnInit {
       this.reset();
     }
   }
+
    public voltar(){
     this.router.navigate(['']);
    }

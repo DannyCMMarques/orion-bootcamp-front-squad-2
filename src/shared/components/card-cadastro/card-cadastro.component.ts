@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { mockCadastro } from 'src/utils/mocks/mocksCadrastro';
 
 @Component({
@@ -8,4 +9,11 @@ import { mockCadastro } from 'src/utils/mocks/mocksCadrastro';
 })
 export class CardCadastroComponent {
   public data=mockCadastro;
+
+  constructor(private router: Router){ }
+
+  public navegar(pagina:string){
+    this.router.navigate([`/${pagina}`]);
+  }
+
 }

@@ -3,6 +3,6 @@
         <div class="flex justify-center items-center">
             <img class="w-[180px] sm:w-[220px]" src={{item.imagem}} alt="imagem do card {{item.titulo}}"/>
         </div>
-        <button class="bg-white rounded-xl ml-0 sm:ml-[5px] mt-[12px] py-[5px] w-full sm:w-[220px]">{{item.titulo}}</button>
+        <button (click)="navegar(item.link)" class="bg-white rounded-xl ml-0 sm:ml-[5px] mt-[12px] py-[5px] w-full sm:w-[220px]">{{item.titulo}}</button>
     </div>
 </div>
