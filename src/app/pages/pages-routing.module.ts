@@ -22,6 +22,10 @@ const routes: Routes = [
     component: PagesCadatrarComponent,
     canActivate: [authGuard],
   },
+  {
+    path: 'tela-principal',
+    component: TelaPrincipalComponent,
+  },
 ];
 
 @NgModule({

@@ -2,9 +2,11 @@
   (click)="emitFunction()"
   class="ripple-effect rounded-full w-full h-[40px] hover:opacity-85 duration-150 relative overflow-hidden"
   [ngClass]="{
-    'bg-roxo-escuro text-white': buttonStyle === 'full',
+    'bg-roxo_400 text-slate-200': buttonStyle === 'full' && !simpleButtonGray,
+    'bg-roxo-600 text-white':buttonStyle === 'full-roxo-600',
+    'border-roxo_400 text-roxo_400 border-2 ': buttonStyle === 'outline' && !simpleButtonGray,
+    'text-sm text-gray-600 mb-4 hover:text-gray-600 duration-150 ': simpleButtonGray,
     'bg-roxo-claro text-black h-[23px]': buttonStyle === 'full-roxo-claro',
-    'border-roxo-escuro text-roxo-escuro border-2 ': buttonStyle === 'outline'
   }"
 >
   {{ title }}
