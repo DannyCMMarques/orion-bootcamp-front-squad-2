@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from 'angular-toastify';
 import { LoginCadastroService } from 'src/shared/services/login-cadastro.service';
 import { getAuthToken } from 'src/utils/helpers/helpers';
@@ -45,7 +44,6 @@ export class LoginComponent implements OnInit {
 
   public submit() {
     this.formulario.markAllAsTouched();
-
     if (this.formulario.valid) {
       this.loginCadastroService
         .loginAdministradores(this.formulario.value)
@@ -53,7 +51,7 @@ export class LoginComponent implements OnInit {
           next: (response) => {
             if (response && getAuthToken()) {
               this.showError = false;
-              this.router.navigate(['/']); //TODO:mudar quando tiver a rota da pagina principaç
+              this.router.navigate(['/tela-principal']);
             }
           },
           error: (error) => {
@@ -69,6 +67,10 @@ export class LoginComponent implements OnInit {
       this.reset();
     }
   }
+
+   public voltar(){
+    this.router.navigate(['']);
+   }
 
   private reset() {
     this.formulario.reset();
