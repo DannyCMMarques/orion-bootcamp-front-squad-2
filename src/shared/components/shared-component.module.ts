@@ -10,6 +10,8 @@ import { InputFieldComponent } from './input-component/input-component.component
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { OpcoesMenuLateralComponent } from './opcoes-menu-lateral/opcoes-menu-lateral.component';
 import { SelectComponent } from './select/select.component';
+import { FormularioTurmasComponent } from './formulario-turmas/formulario-turmas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,9 @@ import { SelectComponent } from './select/select.component';
     ButtonTelaInicialComponent,
     SelectComponent,
     DialogComponent,
+    FormularioTurmasComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
     ButtonComponent,
     InputFieldComponent,
@@ -33,6 +36,7 @@ import { SelectComponent } from './select/select.component';
     ButtonTelaInicialComponent,
     SelectComponent,
     DialogComponent,
+    FormularioTurmasComponent,
   ],
 })
 export class SharedComponentModule {}
