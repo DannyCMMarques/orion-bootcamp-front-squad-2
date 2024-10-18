@@ -26,7 +26,7 @@ export class PagesCadatrarComponent implements OnInit {
       this.subtitulo = 'Preencha os dados do estudante.';
     } else if (this.type === 'turmas') {
       this.titulo = 'Cadastro de turma ';
-      this.subtitulo = 'Complete o formulário para registrar ';
+      this.subtitulo = 'Complete o formulário para registrar a turma. ';
     } else if(this.type ==="professores") {
       this.titulo = 'Cadastro de docente';
       this.subtitulo = 'Preencha as informações do professor ou professora. ';
