@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/tela-inicial', pathMatch: 'full' },
   { path: 'tela-inicial', component: TelaInicialComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'tela-principal', component: TelaPrincipalComponent},
   {
     path: 'cadastrados/:type',
     component: PageExibirCadastrosComponent,
