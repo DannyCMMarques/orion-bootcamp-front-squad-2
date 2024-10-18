@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { mocksSeletor } from 'src/utils/mocks/mocksSelector';
 
 @Component({
   selector: 'app-formulario-turmas',
@@ -7,42 +8,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./formulario-turmas.component.scss'],
 })
 export class FormularioTurmasComponent {
-  showError = false;
-  formulario: FormGroup;
+  public showError = false;
+  public errorMessage =
+    'Por favor, corrija os erros antes de enviar o formulário.';
+  public formulario: FormGroup;
+  public dataTurma = mocksSeletor;
 
   constructor(private formBuilder: FormBuilder) {
     this.formulario = this.formBuilder.group({
       anoEscolar: ['', Validators.required],
       turno: ['', Validators.required],
       ensino: ['', Validators.required],
-      identificador: ['', [Validators.required, Validators.maxLength(20)]],
+      identificador: ['', Validators.required],
+    });
+
+    this.formulario.statusChanges.subscribe((status) => {
+      if (status === 'VALID') {
+        this.showError = false;
+      }
     });
   }
 
-  getErrorMessage(controlName: string, fieldLabel: string): string {
-    const control = this.formulario.controls[controlName];
-    if (control.hasError('required') && control.touched) {
-      return `É obrigatório informar o ${fieldLabel}`;
-    } else if (control.hasError('maxlength') && control.touched) {
-      return 'Campo de texto com limite de 20 caracteres; aceita letras, números e caracteres especiais.';
-    }
-    return '';
-  }
-
-  getShowError(controlName: string): boolean {
-    const control = this.formulario.controls[controlName];
-    return (control.invalid && control.touched) || this.showError;
-  }
-
-  onSubmit() {
+  public onSubmit(): void {
     if (this.formulario && this.formulario.valid) {
       this.resetForm();
+      this.showError = false;
     } else {
+      this.showError = true;
       this.formulario?.markAllAsTouched();
     }
   }
 
-  resetForm() {
+  private resetForm() {
     if (this.formulario) {
       this.formulario.reset();
     }
