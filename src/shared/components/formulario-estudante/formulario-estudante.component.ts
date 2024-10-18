@@ -9,7 +9,7 @@ import { mockSeletor } from 'src/utils/mocks/mocksSeletor';
 })
 export class FormularioEstudanteComponent {
   public dataTurma = mockSeletor;
-  public showError = false;
+  public showError = false; //TODO: implementar uso do showError
   public formulario = this.formBuilder.group({
     email: [null, [Validators.required, Validators.email]],
     nomeAluno: [null, [Validators.required]],
