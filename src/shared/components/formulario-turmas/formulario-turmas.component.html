@@ -1,0 +1,49 @@
+<div class="flex justify-center items-center mt-5" *ngIf=" formulario">
+    <form [formGroup]="formulario" class=" w-[70%] md:w-[40%] sm:w-[70%]">
+
+        <div class="mt-4 sm:mt-4">
+            <app-select label="Ano Letivo" [data]="dataTurma.anoEscolar" formControlName="anoEscolar" id="anoEscolar" [showError]="(formulario.controls['anoEscolar'].invalid && formulario.controls['anoEscolar'].touched)">
+            </app-select>
+            <p *ngIf="formulario.controls['anoEscolar']?.errors?.['required'] && formulario.controls['anoEscolar']?.touched" class="text-red-500">
+                É obrigatório informar o Ano Letivo.
+            </p>
+        </div>
+
+        <div class="mt-4 sm:mt-4">
+            <app-select label="Período Letivo" [data]="dataTurma.turno" formControlName="turno" id="turno" [showError]="(formulario.controls['turno'].invalid && formulario.controls['turno'].touched)">
+            </app-select>
+            <p *ngIf="formulario.controls['turno']?.errors?.['required'] && formulario.controls['turno']?.touched" class="text-red-500">
+                E obrigatório informar o Período Letivo.
+            </p>
+        </div>
+
+        <div class="mt-4 sm:mt-4">
+            <app-select label="Ensino" [data]="dataTurma.ensino" formControlName="ensino" id="ensino" [showError]="(formulario.controls['ensino'].invalid && formulario.controls['ensino'].touched)">
+            </app-select>
+            <p *ngIf="formulario.controls['ensino']?.errors?.['required'] && formulario.controls['ensino']?.touched" class="text-red-500">
+                É orbigatório informar o tipo de Ensino.
+            </p>
+        </div>
+
+        <div class="mt-4 sm:mt-4">
+            <app-input-component label="Identificador de turma" formControlName="identificador" id="identificador" [showError]="(formulario.controls['identificador'].invalid && formulario.controls['identificador'].touched)">
+            </app-input-component>
+
+            <p *ngIf="formulario.controls['identificador']?.errors?.['maxlength'] && formulario.controls['identificador']?.touched" class="text-red-500">
+                O identificador deve ter no máximo 20 caracteres e pode conter letras, números e caracteres especiais.
+            </p>
+
+            <p *ngIf="formulario.controls['identificador']?.errors?.['required'] && formulario.controls['identificador']?.touched" class="text-red-500">
+                É obrigatório informar o identificador para a turma.
+            </p>
+
+            <div *ngIf="showError" class="text-red-500">
+                {{ errorMessage }}
+            </div>
+
+            <div class="w-1/2 m-auto mt-3">
+                <app-button buttonStyle="full" title="Cadastrar" (click)="onSubmit()"></app-button>
+            </div>
+        </div>
+    </form>
+</div>
