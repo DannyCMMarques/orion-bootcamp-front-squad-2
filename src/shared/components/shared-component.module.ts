@@ -7,13 +7,12 @@ import { ButtonComponent } from './button/button.component';
 import { ContentTelaComponent } from './content-tela/content-tela.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { FormularioEstudanteComponent } from './formulario-estudante/formulario-estudante.component';
+import { FormularioTurmasComponent } from './formulario-turmas/formulario-turmas.component';
 import { ImagemTelaComponent } from './imagem-tela/imagem-tela.component';
 import { InputFieldComponent } from './input-component/input-component.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { OpcoesMenuLateralComponent } from './opcoes-menu-lateral/opcoes-menu-lateral.component';
 import { SelectComponent } from './select/select.component';
-import { FormularioTurmasComponent } from './formulario-turmas/formulario-turmas.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent,
+    FormularioTurmasComponent
   ],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule,ReactiveFormsModule],
   exports: [
     ButtonComponent,
     InputFieldComponent,
@@ -40,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent,
+    FormularioTurmasComponent
+
   ],
 })
 export class SharedComponentModule {}
