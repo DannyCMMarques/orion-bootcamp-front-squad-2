@@ -17,7 +17,7 @@ export class PagesCadatrarComponent implements OnInit {
     this.localizarRota();
   }
 
-  localizarRota() {
+ private localizarRota() {
     this.route.paramMap.subscribe((params) => {
       this.type = params.get('type') || '';
     });
