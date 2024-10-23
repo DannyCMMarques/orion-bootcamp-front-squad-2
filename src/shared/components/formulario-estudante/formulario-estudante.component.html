@@ -1,6 +1,6 @@
 <div class="flex justify-center items-center mt-5">
   <form [formGroup]="formulario" class=" w-[70%] md:w-[40%] sm:w-[70%]">
-
+    <app-dialog [title]=title [message]=message [label_button]=labelButton [isOpen]=isOpen></app-dialog>
     <div class="mt-[14px] sm:mt-[18px]">
       <app-input-component
         placeholder="Nome do aluno"
@@ -8,8 +8,8 @@
         formControlName="nomeAluno"
         [showError]="
        ( formulario.controls['nomeAluno']?.invalid &&
-        formulario.controls['nomeAluno']?.touched) ||
-        showError "></app-input-component>
+        formulario.controls['nomeAluno']?.touched)  ?? false
+        "></app-input-component>
       <p *ngIf="
         formulario.controls['nomeAluno']?.errors?.['required'] &&
         formulario.controls['nomeAluno']?.touched
@@ -38,10 +38,10 @@
 
     <div class="mt-[14px] sm:mt-[18px]">
       <app-select label="Turma" [data]="dataTurma" formControlName="turma"
-        [showError]="(  formulario.controls['turma']?.invalid &&
-    formulario.controls['turma']?.touched ) || showError
-  "></app-select>
-      <p *ngIf="
+        [showError]="(formulario.controls['turma']?.invalid  &&
+    formulario.controls['turma']?.touched)  ?? false">
+    </app-select>
+          <p *ngIf="
         formulario.controls['turma']?.errors?.['required'] &&
         formulario.controls['turma']?.touched
       " class="text-red-500">
@@ -99,6 +99,6 @@
       <app-button buttonStyle="full" title="Cadastrar"
         (click)="submit()"></app-button>
     </div>
-
+    <lib-toastify-toast-container [pauseOnHover]="false"></lib-toastify-toast-container>
   </form>
 </div>
