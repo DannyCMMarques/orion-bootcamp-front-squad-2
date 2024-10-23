@@ -15,9 +15,10 @@ import { AppComponent } from './app.component';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import { PagesModule } from './pages/pages.module';
 import { TelaPrincipalComponent } from './pages/tela-principal/tela-principal.component';
+import { ButtonVoltarComponent } from 'src/shared/components/button-voltar/button-voltar.component';
 
 @NgModule({
-  declarations: [AppComponent, TelaPrincipalComponent, CardCadastroComponent],
+  declarations: [AppComponent, TelaPrincipalComponent, CardCadastroComponent, ButtonVoltarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
