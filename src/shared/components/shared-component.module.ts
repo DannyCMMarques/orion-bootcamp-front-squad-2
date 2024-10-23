@@ -27,10 +27,14 @@ import { SelectComponent } from './select/select.component';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent,
+    FormularioTurmasComponent
   ],
+<<<<<<< HEAD
   imports: [CommonModule, RouterModule, ReactiveFormsModule, AngularToastifyModule,
   ],
+=======
+  imports: [CommonModule, RouterModule,ReactiveFormsModule],
+>>>>>>> 5ef0f5ab418c3412772fac0596f406b899f272d8
   exports: [
     ButtonComponent,
     InputFieldComponent,
@@ -41,10 +45,11 @@ import { SelectComponent } from './select/select.component';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent,
+    FormularioTurmasComponent
+
   ],
   providers:[
     ToastService
   ]
 })
-export class SharedComponentModule {}
+export class SharedComponentModule{}
