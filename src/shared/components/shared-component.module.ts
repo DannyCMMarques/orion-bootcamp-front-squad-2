@@ -29,12 +29,8 @@ import { SelectComponent } from './select/select.component';
     DialogComponent,
     FormularioTurmasComponent
   ],
-<<<<<<< HEAD
   imports: [CommonModule, RouterModule, ReactiveFormsModule, AngularToastifyModule,
   ],
-=======
-  imports: [CommonModule, RouterModule,ReactiveFormsModule],
->>>>>>> 5ef0f5ab418c3412772fac0596f406b899f272d8
   exports: [
     ButtonComponent,
     InputFieldComponent,

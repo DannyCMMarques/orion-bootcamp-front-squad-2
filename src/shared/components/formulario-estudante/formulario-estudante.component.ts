@@ -12,10 +12,6 @@ import { mockSeletor } from 'src/utils/mocks/mocksSeletor';
 export class FormularioEstudanteComponent {
   public dataTurma = mockSeletor;
   public showError = false;
-  public title = 'Estudante já existe nos cadastros';
-  public message =
-    'Verifique as informações digitadas ou digite novas informações';
-  public labelButton = 'Entendi';
   public isOpen = false;
   public formulario = this.formBuilder.group({
     email: [null, [Validators.required, Validators.email]],

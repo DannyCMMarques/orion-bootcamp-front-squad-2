@@ -1,6 +1,8 @@
 <div class="flex justify-center items-center mt-5">
   <form [formGroup]="formulario" class=" w-[70%] md:w-[40%] sm:w-[70%]">
-    <app-dialog [title]=title [message]=message [label_button]=labelButton [isOpen]=isOpen></app-dialog>
+    <app-dialog title='Estudante já existe nos cadastros'
+      message='Verifique as informações digitadas ou digite novas informações' ;
+      label_button='Entendi' [isOpen]=isOpen></app-dialog>
     <div class="mt-[14px] sm:mt-[18px]">
       <app-input-component
         placeholder="Nome do aluno"
@@ -11,8 +13,8 @@
         formulario.controls['nomeAluno']?.touched)  ?? false
         "></app-input-component>
       <p *ngIf="
-        formulario.controls['nomeAluno']?.errors?.['required'] &&
-        formulario.controls['nomeAluno']?.touched
+        formulario.controls['nomeAluno'].errors?.['required'] &&
+        formulario.controls['nomeAluno'].touched
       " class="text-red-500">
         O nome do aluno é obrigatório.
       </p>
@@ -25,12 +27,12 @@
         type="number"
         label="Número da Matrícula"
         formControlName="matricula"
-        [showError]="(  formulario.controls['matricula']?.invalid &&
-        formulario.controls['matricula']?.touched ) || showError
+        [showError]="(  formulario.controls['matricula'].invalid &&
+        formulario.controls['matricula'].touched ) || showError
       "></app-input-component>
       <p *ngIf="
-        formulario.controls['matricula']?.errors?.['required'] &&
-        formulario.controls['matricula']?.touched
+        formulario.controls['matricula'].errors?.['required'] &&
+        formulario.controls['matricula'].touched
       " class="text-red-500">
         O número da matrícula é obrigatório.
       </p>
@@ -40,8 +42,8 @@
       <app-select label="Turma" [data]="dataTurma" formControlName="turma"
         [showError]="(formulario.controls['turma']?.invalid  &&
     formulario.controls['turma']?.touched)  ?? false">
-    </app-select>
-          <p *ngIf="
+      </app-select>
+      <p *ngIf="
         formulario.controls['turma']?.errors?.['required'] &&
         formulario.controls['turma']?.touched
       " class="text-red-500">
@@ -57,16 +59,18 @@
         formControlName="CPF"
         minlength="11"
         [showError]="
-        (formulario.controls['CPF']?.errors?.['required'] ||
-        formulario.controls['CPF']?.errors?.['pattern']) &&
-        formulario.controls['CPF']?.touched"></app-input-component>
+        (formulario.controls['CPF'].errors?.['required'] ||
+        formulario.controls['CPF'].errors?.['pattern']) &&
+        formulario.controls['CPF'].touched"></app-input-component>
       <p *ngIf="
-        formulario.controls['CPF']?.errors?.['required'] &&
-        formulario.controls['CPF']?.touched
+        formulario.controls['CPF'].errors?.['required'] &&
+        formulario.controls['CPF'].touched
       " class="text-red-500">
         O CPF é obrigatório.
       </p>
-      <p *ngIf="formulario.controls['CPF']?.errors?.['pattern'] && formulario.controls['CPF']?.touched" class="text-red-500">
+      <p
+        *ngIf="formulario.controls['CPF'].errors?.['pattern'] && formulario.controls['CPF'].touched"
+        class="text-red-500">
         O CPF deve ter no mínimo 11 dígitos.
       </p>
     </div>
@@ -78,18 +82,18 @@
         label="E-mail do responsável"
         formControlName="email"
         [showError]="
-        (formulario.controls['email']?.errors?.['required'] ||
-        formulario.controls['email']?.errors?.['email']) &&
-        formulario.controls['email']?.touched"></app-input-component>
+        (formulario.controls['email'].errors?.['required'] ||
+        formulario.controls['email'].errors?.['email']) &&
+        formulario.controls['email'].touched"></app-input-component>
       <p *ngIf="
-        formulario.controls['email']?.errors?.['required'] &&
-        formulario.controls['email']?.touched
+        formulario.controls['email'].errors?.['required'] &&
+        formulario.controls['email'].touched
       " class="text-red-500">
         O e-mail é obrigatório.
       </p>
       <p *ngIf="
-        formulario.controls['email']?.errors?.['email'] &&
-        formulario.controls['email']?.touched
+        formulario.controls['email'].errors?.['email'] &&
+        formulario.controls['email'].touched
       " class="text-red-500">
         Por favor, insira um e-mail válido.
       </p>
@@ -99,6 +103,7 @@
       <app-button buttonStyle="full" title="Cadastrar"
         (click)="submit()"></app-button>
     </div>
-    <lib-toastify-toast-container [pauseOnHover]="false"></lib-toastify-toast-container>
+    <lib-toastify-toast-container
+      [pauseOnHover]="false"></lib-toastify-toast-container>
   </form>
 </div>
