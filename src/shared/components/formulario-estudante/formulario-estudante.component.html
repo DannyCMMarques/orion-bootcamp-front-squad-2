@@ -44,8 +44,8 @@
     formulario.controls['turma']?.touched)  ?? false">
       </app-select>
       <p *ngIf="
-        formulario.controls['turma']?.errors?.['required'] &&
-        formulario.controls['turma']?.touched
+        formulario.controls['turma'].errors?.['required'] &&
+        formulario.controls['turma'].touched
       " class="text-red-500">
         A turma é obrigatória.
       </p>
