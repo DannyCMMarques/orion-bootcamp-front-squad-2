@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ToastService } from 'angular-toastify';
+import { CadastrarService } from 'src/shared/services/cadastrar.service';
 import { mockSeletor } from 'src/utils/mocks/mocksSeletor';
 
 @Component({
@@ -9,7 +11,8 @@ import { mockSeletor } from 'src/utils/mocks/mocksSeletor';
 })
 export class FormularioEstudanteComponent {
   public dataTurma = mockSeletor;
-  public showError = false; //TODO: implementar uso do showError
+  public showError = false;
+  public isOpen = false;
   public formulario = this.formBuilder.group({
     email: [null, [Validators.required, Validators.email]],
     nomeAluno: [null, [Validators.required]],
@@ -18,18 +21,44 @@ export class FormularioEstudanteComponent {
     turma: [null, [Validators.required]],
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private _toastService: ToastService,
+    private cadastrarService: CadastrarService
+  ) {}
 
+  private addInfoToastError() {
+    this._toastService.error('Ocorreu um erro inesperado no sistema');
+  }
+  private addInfoToastSuccess() {
+    this._toastService.success('Estudante cadastrado com sucesso');
+  }
   public submit(): void {
+    this.addInfoToastSuccess();
+
+    this.formulario.markAllAsTouched();
     if (this.formulario.valid) {
-      this.reset();
-    } else {
-      this.formulario.markAllAsTouched();
+      this.cadastrarService.cadastroEstudante(this.formulario.value).subscribe({
+        next: (response) => {
+          if (response && response.success) {
+            this.addInfoToastSuccess();
+            this.reset();
+          }
+        },
+        error: (error) => {
+          if (error.status === 409) {
+            //  TODO:Mudar quando tiver a api
+            this.isOpen = true;
+            this.showError = true;
+          } else {
+            this.addInfoToastError();
+          }
+        },
+      });
     }
   }
 
   private reset() {
     this.formulario.reset();
   }
-
 }
