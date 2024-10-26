@@ -40,5 +40,3 @@ Para obter mais ajuda sobre o Angular CLI, use `ng help` ou consulte a página [
 - Conjunto de regras/definições para padronização do projeto
 - [Veja a Documentação aqui](https://github.com/angular-eslint/angular-eslint#angular-eslint)
 - [ESlint](https://github.com/typescript-eslint/typescript-eslint)
-
-test remote
