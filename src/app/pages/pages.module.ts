@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PageExibirCadastrosComponent } from './page-exibir-cadastros/page-exibir-cadastros.component';
 import { PagesCadatrarComponent } from './pages-cadatrar/pages-cadatrar.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
+import { ButtonVoltarComponent } from 'src/shared/components/button-voltar/button-voltar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
     PageExibirCadastrosComponent,
     PagesCadatrarComponent,
     TelaInicialComponent,
+    ButtonVoltarComponent,
   ],
   imports: [
     CommonModule,

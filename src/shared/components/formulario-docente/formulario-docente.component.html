@@ -1,0 +1,82 @@
+<div class="w-full">
+    <form [formGroup]="formulario" class="w-full">
+      <div class="mt-[14px] sm:mt-[18px]">
+        <app-input-component
+          placeholder=""
+          label="Nome completo"
+          formControlName="nomeProfessor"
+          [showError]="
+          ( formulario.controls['nomeProfessor'].invalid &&
+          formulario.controls['nomeProfessor'].touched) ||
+          showError "></app-input-component>
+        <p *ngIf="
+          formulario.controls['nomeProfessor'].errors?.['required'] &&
+          formulario.controls['nomeProfessor'].touched
+        " class="text-red-500">
+          O nome do professor é obrigatório.
+        </p>
+      </div>
+  
+      <div class="mt-[14px] sm:mt-[18px]">
+        <app-input-component
+          placeholder="123456789"
+          minlength="11"
+          type="number"
+          label="Número da Matrícula"
+          formControlName="matricula"
+          [showError]="(  formulario.controls['matricula'].invalid &&
+          formulario.controls['matricula'].touched ) || showError
+        "></app-input-component>
+        <p *ngIf="
+          formulario.controls['matricula'].errors?.['required'] &&
+          formulario.controls['matricula'].touched
+        " class="text-red-500">
+          O número da matrícula é obrigatório.
+        </p>
+      </div>
+  
+      <!-- checkobox turmas -->
+      <div class="mt-[14px] sm:mt-[18px]">
+        <app-select label="Turmas" [data]="dataTurma" formControlName="turma" [multiple]="true"
+          [showError]="(  formulario.controls['turma'].invalid &&
+      formulario.controls['turma'].touched ) || showError
+    "></app-select>
+        <p *ngIf="
+          formulario.controls['turma'].errors?.['required'] &&
+          formulario.controls['turma'].touched
+        " class="text-red-500">
+          A turma é obrigatória.
+        </p>
+      </div>
+       
+  
+      <div class="mt-[14px] sm:mt-[18px]">
+        <app-input-component
+          placeholder="docente@mail.com"
+          type="email"
+          label="E-mail do docente"
+          formControlName="email"
+          [showError]="
+          (formulario.controls['email'].errors?.['required'] ||
+          formulario.controls['email'].errors?.['email']) &&
+          formulario.controls['email'].touched"></app-input-component>
+        <p *ngIf="
+          formulario.controls['email'].errors?.['required'] &&
+          formulario.controls['email'].touched
+        " class="text-red-500">
+          O e-mail é obrigatório.
+        </p>
+        <p *ngIf="
+          formulario.controls['email'].errors?.['email'] &&
+          formulario.controls['email'].touched
+        " class="text-red-500">
+          Insira um endereço de e-mail válido.
+        </p>
+      </div>
+  
+      <div class="w-1/2 m-auto mt-3">
+        <app-button buttonStyle="full" title="Cadastrar"
+          (click)="submit()"></app-button>
+      </div>
+    </form>
+  </div>

@@ -1,3 +1,8 @@
+<div class="flex justify-center relative">
+  <div class="w-[1000px] h-[80px] relative">
+    <app-button-voltar [rota]="'/tela-principal'" class="absolute bottom-0 left-0 mb-2 ml-2"></app-button-voltar>
+  </div>
+</div>
 <div class="flex justify-center">
   <div class=" w-[70%] md:w-[40%] sm:w-[70%] mt-[45px]">
     <div class=" h-auto w-auto mb-0">
@@ -13,6 +18,7 @@
       </ng-container>
       <ng-container *ngIf="type==='professores'">
         <!--TODO: colocar o componete formulario professores -->
+        <app-formulario-docente></app-formulario-docente>
       </ng-container>
     </div>
   </div>

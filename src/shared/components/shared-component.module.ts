@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AngularToastifyModule, ToastService } from 'angular-toastify';
 import { ButtonTelaInicialComponent } from './button-tela-inicial/button-tela-inicial.component';
 import { ButtonComponent } from './button/button.component';
 import { ContentTelaComponent } from './content-tela/content-tela.component';
@@ -14,6 +13,7 @@ import { InputFieldComponent } from './input-component/input-component.component
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { OpcoesMenuLateralComponent } from './opcoes-menu-lateral/opcoes-menu-lateral.component';
 import { SelectComponent } from './select/select.component';
+import { FormularioDocenteComponent } from './formulario-docente/formulario-docente.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,10 @@ import { SelectComponent } from './select/select.component';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent
+    FormularioTurmasComponent,
+    FormularioDocenteComponent
   ],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, AngularToastifyModule,
-  ],
+  imports: [CommonModule, RouterModule,ReactiveFormsModule],
   exports: [
     ButtonComponent,
     InputFieldComponent,
@@ -41,11 +41,9 @@ import { SelectComponent } from './select/select.component';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent
+    FormularioTurmasComponent,
+    FormularioDocenteComponent
 
   ],
-  providers:[
-    ToastService
-  ]
 })
 export class SharedComponentModule{}

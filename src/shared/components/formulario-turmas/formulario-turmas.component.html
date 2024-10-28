@@ -1,7 +1,7 @@
 <div>
     <form [formGroup]="formulario" class="w-full ">
         <div class="mt-4 sm:mt-4">
-            <app-select label="Ano Letivo" [data]="dataTurma.anoEscolar" formControlName="anoEscolar" id="anoEscolar" [showError]="(formulario.controls['anoEscolar'].invalid && formulario.controls['anoEscolar'].touched)">
+            <app-select label="Ano Escolar" [data]="dataTurma.anoEscolar" formControlName="anoEscolar" id="anoEscolar" [showError]="(formulario.controls['anoEscolar'].invalid && formulario.controls['anoEscolar'].touched)">
             </app-select>
             <p *ngIf="formulario.controls['anoEscolar']?.errors?.['required'] && formulario.controls['anoEscolar']?.touched" class="text-red-500">
                 É obrigatório informar o Ano Letivo.
@@ -9,7 +9,7 @@
         </div>
 
         <div class="mt-4 sm:mt-4">
-            <app-select label="Período Letivo" [data]="dataTurma.turno" formControlName="turno" id="turno" [showError]="(formulario.controls['turno'].invalid && formulario.controls['turno'].touched)">
+            <app-select label="Turno" [data]="dataTurma.turno" formControlName="turno" id="turno" [showError]="(formulario.controls['turno'].invalid && formulario.controls['turno'].touched)">
             </app-select>
             <p *ngIf="formulario.controls['turno']?.errors?.['required'] && formulario.controls['turno']?.touched" class="text-red-500">
                 E obrigatório informar o Período Letivo.

@@ -3,19 +3,19 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { mockSeletor } from 'src/utils/mocks/mocksSeletor';
 
 @Component({
-  selector: 'app-formulario-estudante',
-  templateUrl: './formulario-estudante.component.html',
-  styleUrls: ['./formulario-estudante.component.scss'],
+  selector: 'app-formulario-docente',
+  templateUrl: './formulario-docente.component.html',
+  styleUrls: ['./formulario-docente.component.scss']
 })
-export class FormularioEstudanteComponent {
-  public dataTurma = mockSeletor;
+export class FormularioDocenteComponent {
   public showError = false; //TODO: implementar uso do showError
+  public dataTurma = mockSeletor;
+  
   public formulario = this.formBuilder.group({
     email: [null, [Validators.required, Validators.email]],
-    nomeAluno: [null, [Validators.required]],
+    nomeProfessor: [null, [Validators.required]],
     matricula: [null, [Validators.required]],
-    CPF: [null, [Validators.required, Validators.pattern(/^\d{11}$/)]],
-    turma: [null, [Validators.required]],
+    turma: this.formBuilder.control([], Validators.required),
   });
 
   constructor(private formBuilder: FormBuilder) {}
