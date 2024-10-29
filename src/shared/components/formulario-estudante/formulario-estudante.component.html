@@ -1,16 +1,13 @@
-<div class="flex justify-center items-center mt-5">
-  <form [formGroup]="formulario" class=" w-[70%] md:w-[40%] sm:w-[70%]">
-    <app-dialog title='Estudante já existe nos cadastros'
-      message='Verifique as informações digitadas ou digite novas informações' ;
-      label_button='Entendi' [isOpen]=isOpen></app-dialog>    
-      <div class="mt-[14px] sm:mt-[18px]">
+<div>
+  <form [formGroup]="formulario" class="w-full ">
+      <div class="mt-4 sm:mt-4">
       <app-input-component
         placeholder="Nome do aluno"
         label="Nome completo"
         formControlName="nomeAluno"
         [showError]="
-       ( formulario.controls['nomeAluno']?.invalid &&
-        formulario.controls['nomeAluno']?.touched)  ?? false
+       ( formulario.controls['nomeAluno'].invalid &&
+        formulario.controls['nomeAluno'].touched) || showError
         "></app-input-component>
       <p *ngIf="
         formulario.controls['nomeAluno'].errors?.['required'] &&
@@ -40,8 +37,8 @@
 
     <div class="mt-[14px] sm:mt-[18px]">
       <app-select label="Turma" [data]="dataTurma" formControlName="turma"
-      [showError]="(formulario.controls['turma']?.invalid  &&
-      formulario.controls['turma']?.touched)  ?? false">
+      [showError]="(formulario.controls['turma'].invalid  &&
+      formulario.controls['turma']?.touched) || showError">
         </app-select>
       <p *ngIf="
         formulario.controls['turma'].errors?.['required'] &&
