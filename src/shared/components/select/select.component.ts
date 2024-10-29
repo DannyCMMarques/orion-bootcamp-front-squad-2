@@ -65,7 +65,7 @@ export class SelectComponent implements ControlValueAccessor {
 
   public onCheckboxChange(value: string): void {
     if (this.selectedValues.includes(value)) {
-      this.selectedValues = this.selectedValues.filter(v => v !== value);
+      this.selectedValues = this.selectedValues.filter(option => option !== value);
     } else {
       this.selectedValues.push(value);
     }

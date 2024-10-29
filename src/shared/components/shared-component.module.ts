@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AngularToastifyModule, ToastService } from 'angular-toastify';
 import { ButtonTelaInicialComponent } from './button-tela-inicial/button-tela-inicial.component';
 import { ButtonComponent } from './button/button.component';
 import { ContentTelaComponent } from './content-tela/content-tela.component';
@@ -30,7 +31,7 @@ import { FormularioDocenteComponent } from './formulario-docente/formulario-doce
     FormularioTurmasComponent,
     FormularioDocenteComponent
   ],
-  imports: [CommonModule, RouterModule,ReactiveFormsModule],
+  imports: [CommonModule, RouterModule,ReactiveFormsModule, AngularToastifyModule],
   exports: [
     ButtonComponent,
     InputFieldComponent,
@@ -45,5 +46,8 @@ import { FormularioDocenteComponent } from './formulario-docente/formulario-doce
     FormularioDocenteComponent
 
   ],
+  providers:[
+    ToastService
+  ]
 })
 export class SharedComponentModule{}

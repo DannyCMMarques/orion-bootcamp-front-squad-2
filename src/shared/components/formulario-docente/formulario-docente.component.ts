@@ -22,6 +22,7 @@ export class FormularioDocenteComponent {
 
   public submit(): void {
     if (this.formulario.valid) {
+       //  TODO:Mudar quando tiver a api
       this.reset();
     } else {
       this.formulario.markAllAsTouched();

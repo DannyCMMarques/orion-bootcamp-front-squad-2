@@ -57,9 +57,9 @@
           label="E-mail do docente"
           formControlName="email"
           [showError]="
-          (formulario.controls['email'].errors?.['required'] ||
-          formulario.controls['email'].errors?.['email']) &&
-          formulario.controls['email'].touched"></app-input-component>
+          ( formulario.controls['email'].invalid &&
+          formulario.controls['email'].touched) ||
+          showError "></app-input-component>
         <p *ngIf="
           formulario.controls['email'].errors?.['required'] &&
           formulario.controls['email'].touched
