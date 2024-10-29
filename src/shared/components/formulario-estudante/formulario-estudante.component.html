@@ -38,7 +38,7 @@
     <div class="mt-[14px] sm:mt-[18px]">
       <app-select label="Turma" [data]="dataTurma" formControlName="turma"
       [showError]="(formulario.controls['turma'].invalid  &&
-      formulario.controls['turma']?.touched) || showError">
+      formulario.controls['turma'].touched) || showError">
         </app-select>
       <p *ngIf="
         formulario.controls['turma'].errors?.['required'] &&
