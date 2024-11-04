@@ -15,6 +15,8 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { OpcoesMenuLateralComponent } from './opcoes-menu-lateral/opcoes-menu-lateral.component';
 import { SelectComponent } from './select/select.component';
 import { FormularioDocenteComponent } from './formulario-docente/formulario-docente.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { FormularioDocenteComponent } from './formulario-docente/formulario-doce
     FormularioTurmasComponent,
     FormularioDocenteComponent
   ],
-  imports: [CommonModule, RouterModule,ReactiveFormsModule, AngularToastifyModule],
+  imports: [CommonModule, RouterModule,ReactiveFormsModule, AngularToastifyModule, MatSnackBarModule],
   exports: [
     ButtonComponent,
     InputFieldComponent,
