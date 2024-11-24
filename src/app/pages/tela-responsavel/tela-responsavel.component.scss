@@ -1,0 +1,8 @@
+/* Adicione isso no arquivo CSS */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Esconde barra de rolagem no Chrome, Safari */
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Esconde barra de rolagem no IE e Edge */
+  scrollbar-width: none;    /* Esconde barra de rolagem no Firefox */
+}

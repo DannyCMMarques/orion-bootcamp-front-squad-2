@@ -14,6 +14,10 @@ import { InputFieldComponent } from './input-component/input-component.component
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { OpcoesMenuLateralComponent } from './opcoes-menu-lateral/opcoes-menu-lateral.component';
 import { SelectComponent } from './select/select.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon'; // Para os ícones
 
 @NgModule({
   declarations: [
@@ -27,9 +31,12 @@ import { SelectComponent } from './select/select.component';
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent
+    FormularioTurmasComponent,
+    ProgressBarComponent
   ],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, AngularToastifyModule,
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, AngularToastifyModule,MatSnackBarModule,
+    MatProgressBarModule,
+    MatIconModule
   ],
   exports: [
     ButtonComponent,

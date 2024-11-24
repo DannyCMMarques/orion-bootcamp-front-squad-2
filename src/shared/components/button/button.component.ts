@@ -10,6 +10,9 @@ export class ButtonComponent {
   @Input() buttonStyle: 'outline' | 'full' | 'full-roxo-claro' | 'full-roxo-600' = 'full'
   @Input() simpleButtonGray = false;
   @Output() clickButton = new EventEmitter
+  @Input() hasImage = false
+  @Input() image = ''
+  @Input() alt = ''
 
 
   public emitFunction() {

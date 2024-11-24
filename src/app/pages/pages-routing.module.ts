@@ -6,12 +6,14 @@ import { PageExibirCadastrosComponent } from './page-exibir-cadastros/page-exibi
 import { PagesCadatrarComponent } from './pages-cadatrar/pages-cadatrar.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
+import { TelaResponsavelComponent } from './tela-responsavel/tela-responsavel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/tela-inicial', pathMatch: 'full' },
   { path: 'tela-inicial', component: TelaInicialComponent },
   { path: 'login', component: LoginComponent },
   {path: 'tela-principal', component: TelaPrincipalComponent},
+  {path: 'tela-responsavel', component: TelaResponsavelComponent},
   {
     path: 'cadastrados/:type',
     component: PageExibirCadastrosComponent,

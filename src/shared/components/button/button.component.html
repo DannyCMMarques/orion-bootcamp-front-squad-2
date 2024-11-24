@@ -10,4 +10,5 @@
   }"
 >
   {{ title }}
+  <img *ngIf="hasImage" [src]="image" [alt]="alt || 'botão'" class="w-[40px] h-[40px]" />
 </button>

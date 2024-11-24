@@ -1,0 +1,39 @@
+<div class="w-full bg-white">
+  <div class="p-8">
+    <p class="font-bold text-lg">INTELIGÊNCIA EMOCIONAL</p>
+    <div class="w-full flex items-center mt-[50px]">
+      <div class="w-[90px] h-[90px] rounded-full border-4 border-[#65558F] mr-[30px]">
+        <img src="../../../assets/img/2 1.png" alt="" class="w-[90px] h-[90px]">
+      </div>
+
+      <div class="w-[650px] mb-[50px]">
+        <div class="flex justify-center mb-[30px]">
+          <div *ngFor="let message of messages"
+               [class.invisible]="!message.visible"
+               class="rounded-full bg-[#322F35] text-[#F5EFF7] w-[180px] p-[6px] flex justify-center items-center text-center text-xs">
+            {{ message.text }}
+          </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <mat-progress-bar
+            mode="determinate"
+            [value]="progressValue"
+            [ngClass]="progressClass"
+            class="custom-progress-bar">
+          </mat-progress-bar>
+          <div class="dividers">
+            <div *ngFor="let position of dividerPositions"
+                class="divider-wrapper"
+                [style.left.%]="position">
+              <img
+                src="../../../assets/img/Handle.png"
+                class="divider"
+                alt="divisor"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
