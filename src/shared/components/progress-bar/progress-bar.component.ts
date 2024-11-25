@@ -1,4 +1,4 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
@@ -6,9 +6,12 @@ import { Component, OnInit,  } from '@angular/core';
   styleUrls: ['./progress-bar.component.scss'],
 })
 export class ProgressBarComponent implements OnInit {
-  public progressValue = 100;
+  @Input() image = ''
+  @Input() alt = ''
+  @Input() title = ''
+  @Input() progressValue = 0;
   public progressClass = '';
-  public dividerPositions = [20,40,60,80];
+  public dividerPositions = [20,40,60,80,100];
   public messages = [
     {
       text: 'Precisa de melhorias',
@@ -34,6 +37,17 @@ export class ProgressBarComponent implements OnInit {
 
   public ngOnInit() {
     this.updateProgressClass();
+    this.updateMessagesVisibility();
+  }
+
+  private updateMessagesVisibility(): void {
+    this.messages.forEach((message, index) => {
+      if (index === 0) {
+        message.visible = this.progressValue <= this.dividerPositions[index];
+      } else {
+        message.visible = this.progressValue > this.dividerPositions[index - 1] && this.progressValue <= this.dividerPositions[index];
+      }
+    });
   }
 
   private updateProgressClass(): void {
@@ -49,5 +63,6 @@ export class ProgressBarComponent implements OnInit {
   public updateProgress(value: number): void {
     this.progressValue = value;
     this.updateProgressClass();
+    this.updateMessagesVisibility();
   }
 }

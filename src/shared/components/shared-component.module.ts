@@ -48,7 +48,8 @@ import { MatIconModule } from '@angular/material/icon'; // Para os ícones
     SelectComponent,
     FormularioEstudanteComponent,
     DialogComponent,
-    FormularioTurmasComponent
+    FormularioTurmasComponent,
+    ProgressBarComponent
 
   ],
   providers:[

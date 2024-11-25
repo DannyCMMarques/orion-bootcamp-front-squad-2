@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu'; // Para o menu
 import { MatIconModule } from '@angular/material/icon'; // Para os ícones
 import { MatButtonModule } from '@angular/material/button'; // Para o botão
 
+
 @NgModule({
   declarations: [
     LoginComponent,

@@ -1,9 +1,9 @@
 <div class="w-full bg-white">
   <div class="p-8">
-    <p class="font-bold text-lg">INTELIGÊNCIA EMOCIONAL</p>
+    <p class="font-bold text-lg">{{title}}</p>
     <div class="w-full flex items-center mt-[50px]">
       <div class="w-[90px] h-[90px] rounded-full border-4 border-[#65558F] mr-[30px]">
-        <img src="../../../assets/img/2 1.png" alt="" class="w-[90px] h-[90px]">
+        <img [src]="image" [alt]="alt" class="w-[90px] h-[90px]" />
       </div>
 
       <div class="w-[650px] mb-[50px]">
@@ -18,7 +18,7 @@
         <div class="progress-bar-container">
             <mat-progress-bar
             mode="determinate"
-            [value]="progressValue"
+            [value]= "progressValue"
             [ngClass]="progressClass"
             class="custom-progress-bar">
           </mat-progress-bar>
